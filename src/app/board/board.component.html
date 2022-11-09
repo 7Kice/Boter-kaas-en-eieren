@@ -1,0 +1,18 @@
+<h1>Huidige speler: {{ player }} </h1>
+
+<button nbButton outline status="danger" (click)="newGame()">Start een nieuw spel</button>
+
+
+<h2 *ngIf="winner">
+    Speler {{ winner }} heeft gewonnen!
+</h2>
+
+
+<main>
+    <app-square 
+        *ngFor="let val of squares; let i = index" 
+        [value]="val"
+        (click)="makeMove(i)"> 
+
+    </app-square>
+</main>
